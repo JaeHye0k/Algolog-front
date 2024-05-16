@@ -1,11 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "../pages/home";
+import Home from "../pages/home/Home.tsx";
+import AppLayout from "../layouts/AppLayout.tsx";
+import NotFound from "../pages/notFound/NotFound.tsx";
+import Board from "../pages/board/Board.tsx";
+import PostDetail from "../pages/postDetail/PostDetail.tsx";
 
-const Routing = () => {
+const Routing: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<Home />} />
+          <Route path=":boardId">
+            <Route index element={<Board />} />
+            <Route path=":postId" element={<PostDetail />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
