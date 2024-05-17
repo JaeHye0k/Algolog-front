@@ -1,5 +1,5 @@
 import ImageCard from "../../components/ImageCard";
-import { cardContainer } from "../../styles/board.css";
+import { cardContainer, boardBanner, boardTitle } from "../../styles/board.css";
 import { useParams } from "react-router-dom";
 
 const Board: React.FC = () => {
@@ -7,7 +7,9 @@ const Board: React.FC = () => {
 
   return (
     <div>
-      <div>{boardId}</div>
+      <div className={boardBanner}>
+        <div className={boardTitle}>{boardId}</div>
+      </div>
       <div className={cardContainer}>
         <ImageCard />
         <ImageCard />

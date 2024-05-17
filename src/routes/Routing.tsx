@@ -4,6 +4,7 @@ import AppLayout from "../layouts/AppLayout.tsx";
 import NotFound from "../pages/notFound/NotFound.tsx";
 import Board from "../pages/board/Board.tsx";
 import PostDetail from "../pages/postDetail/PostDetail.tsx";
+import Posting from "../pages/posting/Posting.tsx";
 
 const Routing: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Routing: React.FC = () => {
             <Route path=":postId" element={<PostDetail />} />
           </Route>
         </Route>
+        <Route path="/posting" element={<Posting />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
