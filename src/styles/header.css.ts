@@ -1,8 +1,10 @@
 import { style, globalStyle } from "@vanilla-extract/css";
 
+export const headerHeight = "70px";
+
 export const header = style({
   width: "100%",
-  height: "70px",
+  height: headerHeight,
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
@@ -26,4 +28,23 @@ export const avatar = style({
 
 export const iconmenu = style({
   display: "flex",
+  alignItems: "center",
+});
+
+export const writeButton = style({
+  selectors: {
+    [`${iconmenu} &`]: {
+      border: "1px solid black",
+      borderRadius: "1rem",
+      padding: "3px 5px",
+      fontWeight: "bold",
+      color: "black",
+      backgroundColor: "white",
+      transition: "all .2s ease-in-out",
+    },
+    "&:hover": {
+      color: "white",
+      backgroundColor: "black",
+    },
+  },
 });

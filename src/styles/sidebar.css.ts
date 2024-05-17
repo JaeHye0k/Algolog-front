@@ -2,11 +2,15 @@ import { style, globalStyle } from "@vanilla-extract/css";
 
 export const sidebar = style({
   backgroundColor: "yellow",
-  minHeight: "100vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   padding: "0 20px",
+  "@media": {
+    "screen and (max-width: 768px)": {
+      display: "none",
+    },
+  },
 });
 
 globalStyle(`${sidebar} > *`, {
