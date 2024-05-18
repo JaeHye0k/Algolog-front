@@ -1,4 +1,15 @@
-import { profile, blogInfo } from "../../../styles/sidebar.css";
+import {
+  blogInfo,
+  profileBox,
+  avatarBox,
+  avatarImage,
+  nameEnglish,
+  nameKorean,
+  infoContainer,
+  nameContainer,
+  hrLine,
+} from "../../../styles/sidebar.css";
+import avatar from "../../../assets/avatar.png";
 
 interface Info {
   daliyVisitors: number;
@@ -16,17 +27,20 @@ const BlogInfo: React.FC = () => {
   };
   return (
     <div className={blogInfo}>
-      <div className={profile}>
-        <div>프로필 사진</div>
-        <div>활동중</div>
-        <div>이름 영어</div>
-        <div>이름 한글</div>
+      <div className={profileBox}>
+        <div className={avatarBox}>
+          <img src={avatar} alt="프로필" className={avatarImage} />
+        </div>
+        <div className={nameContainer}>
+          <div className={nameEnglish}>jackson</div>
+          <div className={nameKorean}>잭슨</div>
+        </div>
       </div>
-      <div>
+      <div className={infoContainer}>
         <div>일일 방문자 수: {info.daliyVisitors} 명</div>
         <div>누적 방문자 수: {info.totalVisitors} 명</div>
-        <div>포스팅 수: {info.postingNums}</div>
-        <div>블로그 운영한지: {info.days}</div>
+        <div>포스팅 수: {info.postingNums} 개</div>
+        <div>블로그 운영한지: {info.days} 일</div>
       </div>
     </div>
   );
