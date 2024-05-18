@@ -1,4 +1,4 @@
-import { sidebar } from "../../styles/sidebar.css.ts";
+import { hrLine, sidebar } from "../../styles/sidebar.css.ts";
 import BlogInfo from "./blogInfo/BlogInfo.tsx";
 import Category from "./category/Category.tsx";
 import Logo from "./logo/Logo.tsx";
@@ -8,6 +8,7 @@ const Sidebar: React.FC = () => {
     <div className={sidebar}>
       <Logo />
       <BlogInfo />
+      <hr className={hrLine} />
       <Category />
     </div>
   );
