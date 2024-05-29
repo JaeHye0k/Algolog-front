@@ -19,7 +19,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
+
+    // "esModuleInterop": true,
+    // "preserveValueImports": false,
   },
-  "include": ["src"],
+  "include": ["src", "backend"],
   "references": [{ "path": "./tsconfig.node.json" }]
+  // "ts-node": {
+  //   "esm": true
+  // }
 }
