@@ -1,12 +1,15 @@
-import { blogName, blogNameSuffix, logo } from "../../../styles/sidebar.css";
+import { blogName, blogNameSuffix, logo } from "./Logo.css";
+import { useNavigate } from "react-router-dom";
 
 const Logo: React.FC = () => {
-  return (
-    <div className={logo}>
-      <span className={blogName}>jackson</span>
-      <span className={blogNameSuffix}>log</span>
-    </div>
-  );
+    const navigate = useNavigate();
+
+    return (
+        <div className={logo} onClick={() => navigate("/")}>
+            <span className={blogName}>jackson</span>
+            <span className={blogNameSuffix}>log</span>
+        </div>
+    );
 };
 
 export default Logo;
