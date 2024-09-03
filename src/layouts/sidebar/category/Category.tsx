@@ -1,15 +1,15 @@
-import { category } from "../../../styles/sidebar.css";
+import { category } from "./Category.css";
 
 const categories: string[] = ["Algorithm", "Develop", "Interest"];
 
 const Category: React.FC = () => {
-  return (
-    <ul className={category}>
-      {categories.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-  );
+    return (
+        <ul className={category}>
+            {categories.map((item, i) => (
+                <li key={i}>{item}</li>
+            ))}
+        </ul>
+    );
 };
 
 export default Category;
