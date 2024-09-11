@@ -6,12 +6,13 @@ export const imageCard = style({
     flexDirection: "column",
 });
 
-export const cardImage = style({
+export const thumbnail = style({
     selectors: {
         [`${imageCard} &`]: {
             width: "100%",
             aspectRatio: "4 / 3",
             objectFit: "cover",
+            backgroundColor: "white",
         },
     },
 });
