@@ -9,6 +9,8 @@ interface contetDataType {
     contentData: MutableRefObject<string>;
 }
 
+// TODO: Editor 에서 지워도 View 동기화 잘 안되는 문제 해결하기
+// TODO: 이미지 업로드 처리
 const ToastEditor: React.FC<contetDataType> = ({ contentData }) => {
     const editorRef = useRef<Editor>(null);
     const toolbarItems = [

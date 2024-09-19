@@ -1,28 +1,28 @@
 import { style, globalStyle } from "@vanilla-extract/css";
 
-export const postingContainer = style({
+export const postContainer = style({
     display: "flex",
     flexDirection: "row",
     height: "100vh",
     padding: "0 5vw",
 });
 
-globalStyle(`${postingContainer} > *`, {
+globalStyle(`${postContainer} > *`, {
     width: "100%",
 });
 
-export const posting = style({
+export const post = style({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     position: "relative",
 });
 
-globalStyle(`${posting} > *`, {
+globalStyle(`${post} > *`, {
     width: "100%",
 });
 
-export const postingHeader = style({
+export const postHeader = style({
     paddingTop: "5vh",
 });
 
@@ -33,7 +33,7 @@ export const title = style({
     outline: "none",
 });
 
-export const postingFooter = style({
+export const postFooter = style({
     position: "absolute",
     bottom: "0",
     left: "0",
