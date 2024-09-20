@@ -1,16 +1,10 @@
 import React, { ChangeEvent, FormEvent, useRef, useState } from "react";
-import {
-    postingContainer,
-    posting,
-    postingHeader,
-    postingFooter,
-    title,
-    buttonGroup,
-} from "./Posting.css";
+import { postContainer, post, postHeader, postFooter, title, buttonGroup } from "./Post.css";
 import { Link, useNavigate } from "react-router-dom";
 import ToastEditor from "../../components/ToastEditor/ToastEditor";
+import { postPost } from "../../api/post";
 
-const Posting: React.FC = () => {
+const Post: React.FC = () => {
     const navigate = useNavigate();
     const [titleData, setTitleData] = useState<string>("");
     const contentData = useRef<string>(" ");
@@ -22,25 +16,15 @@ const Posting: React.FC = () => {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        const response = await fetch(`${import.meta.env.VITE_SERVER_ORIGIN}/posts`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                category_id: "algorithm",
-                content: contentData.current,
-                title: titleData,
-            }),
-        });
-        if (response.ok) navigate("/");
-        else console.error("Failed to submit form");
+        const res = await postPost("category", contentData.current, titleData);
+        if (res.ok) navigate("/");
+        else console.error(`Error: ${res.status} ${res.statusText}`);
     };
 
     return (
-        <div className={postingContainer}>
-            <form className={posting} onSubmit={handleSubmit}>
-                <div className={postingHeader}>
+        <div className={postContainer}>
+            <form className={post} onSubmit={handleSubmit}>
+                <div className={postHeader}>
                     <input
                         className={title}
                         placeholder="제목을 입력하세요"
@@ -49,7 +33,7 @@ const Posting: React.FC = () => {
                     <div>태그</div>
                 </div>
                 <ToastEditor contentData={contentData} />
-                <div className={postingFooter}>
+                <div className={postFooter}>
                     <Link to="/">나가기</Link>
                     <div className={buttonGroup}>
                         <button>임시저장</button>
@@ -61,4 +45,4 @@ const Posting: React.FC = () => {
     );
 };
 
-export default Posting;
+export default Post;

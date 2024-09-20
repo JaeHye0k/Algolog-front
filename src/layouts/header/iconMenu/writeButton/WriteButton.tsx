@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const WriteButton: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <button className={writeButton} onClick={() => navigate("/posting")}>
+        <button className={writeButton} onClick={() => navigate("/post")}>
             새 글 작성
         </button>
     );
