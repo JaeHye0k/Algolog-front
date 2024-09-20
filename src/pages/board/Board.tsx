@@ -1,4 +1,4 @@
-import ImageCard from "../../components/ImageCard";
+import ImageCard from "../../components/ImageCard/ImageCard";
 import { cardContainer, boardBanner, boardTitle } from "./Board.css";
 import { useParams } from "react-router-dom";
 
