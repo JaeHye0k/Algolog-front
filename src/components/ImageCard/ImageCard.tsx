@@ -1,4 +1,4 @@
-import gold5 from "../../assets/gold5.png";
+import gold5 from "../../../assets/gold5.png";
 import { imageCard, thumbnail } from "./ImageCard.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Post } from "../../types/post.type";
