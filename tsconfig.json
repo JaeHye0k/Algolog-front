@@ -18,12 +18,12 @@
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true
+        "noFallthroughCasesInSwitch": true,
         // "noImplicitAny": false
 
         // "esModuleInterop": true,
         // "preserveValueImports": false,
-        // "types": ["vite/client"]
+        "types": ["vite/client"]
     },
     "include": ["src", "declarations.d.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]

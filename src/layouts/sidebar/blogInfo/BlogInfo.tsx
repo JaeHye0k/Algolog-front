@@ -8,7 +8,7 @@ import {
     infoContainer,
     nameContainer,
 } from "./BlogInfo.css";
-import avatar from "../../../assets/avatar.png";
+import avatar from "@assets/avatar.png";
 
 interface Info {
     daliyVisitors: number;

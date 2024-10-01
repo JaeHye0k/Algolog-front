@@ -7,7 +7,7 @@ import { Post } from "../../types/post.type";
 
 const Board: React.FC = () => {
     const { boardId } = useParams();
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState<Post[] | null>(null);
     useEffect(() => {
         async function fetchPosts() {
             const res = await getPosts();
@@ -25,13 +25,11 @@ const Board: React.FC = () => {
                 <div className={boardTitle}>{boardId}</div>
             </div>
             <ul className={cardContainer}>
-                {posts.map((post: Post, idx) => {
-                    return (
-                        <li key={idx}>
-                            <ImageCard post={post} />
-                        </li>
-                    );
-                })}
+                {posts?.map((post: Post, idx) => (
+                    <li key={idx}>
+                        <ImageCard post={post} />
+                    </li>
+                ))}
             </ul>
         </div>
     );

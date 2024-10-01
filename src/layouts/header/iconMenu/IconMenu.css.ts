@@ -1,11 +1,12 @@
 import { style } from "@vanilla-extract/css";
+import avartaImage from "@assets/avatar.png";
 
 export const avatar = style({
     border: "1px solid #52FF00",
     borderRadius: "50%",
     width: "1rem",
     height: "1rem",
-    background: "url(../assets/avatar.png) no-repeat",
+    background: `url(${avartaImage}) no-repeat`,
     backgroundSize: "contain",
 });
 
