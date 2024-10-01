@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { postContainer, post, postHeader, postFooter, title, buttonGroup } from "./Post.css";
 import { Link, useNavigate } from "react-router-dom";
 import ToastEditor from "../../components/ToastEditor/ToastEditor";
-import { postPost } from "../../api/post";
+import { createPost } from "../../api/post";
 
 const Post: React.FC = () => {
     const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Post: React.FC = () => {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        const res = await postPost("category", contentData.current, titleData);
+        const res = await createPost("category", contentData.current, titleData);
         if (res.ok) navigate("/");
         else console.error(`Error: ${res.status} ${res.statusText}`);
     };

@@ -16,3 +16,9 @@ export const thumbnail = style({
         },
     },
 });
+
+export const title = style({
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+});
