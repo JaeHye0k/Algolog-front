@@ -7,6 +7,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
     plugins: [react(), vanillaExtractPlugin()],
     resolve: {
-        alias: [{ find: "@avatar", replacement: resolve(__dirname, "assets/") }],
+        alias: [{ find: "@assets", replacement: resolve(__dirname, "assets/") }],
     },
 });

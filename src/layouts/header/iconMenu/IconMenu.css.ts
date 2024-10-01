@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import avartaImage from "@avatar/avatar.png";
+import avartaImage from "@assets/avatar.png";
 
 export const avatar = style({
     border: "1px solid #52FF00",
